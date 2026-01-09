@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Espace Coach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Espace Coach</h1>
+
+    <h2>Créer une séance</h2>
+    <input type="date" id="date">
+    <input type="time" id="heure">
+    <input type="text" id="lieu" placeholder="Lieu">
+    <select id="categorieSeance">
+        <option value="">-- Sélectionnez la catégorie --</option>
+        <option value="U15">U15</option>
+        <option value="U17">U17</option>
+        <option value="Séniors A">Séniors A</option>
+        <option value="Séniors B">Séniors B</option>
+        <option value="Séniors C">Séniors C</option>
+    </select>
+    <button onclick="creerSeance()">Créer Séance</button>
+    <p id="confirmation"></p>
+
+    <h2>Filtrer les réponses</h2>
+    <input type="text" id="filtrePrenom" placeholder="Filtrer par prénom">
+    <input type="text" id="filtreNom" placeholder="Filtrer par nom">
+    <select id="filtreCategorie">
+        <option value="">-- Toutes les catégories --</option>
+        <option value="U15">U15</option>
+        <option value="U17">U17</option>
+        <option value="Séniors A">Séniors A</option>
+        <option value="Séniors B">Séniors B</option>
+        <option value="Séniors C">Séniors C</option>
+    </select>
+    <input type="date" id="filtreDate">
+    <input type="time" id="filtreHeure">
+    <button onclick="afficherTableau()">Appliquer filtres</button>
+
+    <h2>Tableau des séances et réponses</h2>
+    <button onclick="imprimerTableau()">Imprimer / Export PDF</button>
+    <button onclick="exportCSV()">Exporter CSV</button>
+    <div id="tableauContainer"></div>
+
+    <h2>Statistiques par joueur</h2>
+    <button onclick="genererStats()">Afficher statistiques</button>
+    <canvas id="graphiquesJoueur" width="400" height="200"></canvas>
+
+    <button onclick="window.location.href='index.html'">Retour accueil</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

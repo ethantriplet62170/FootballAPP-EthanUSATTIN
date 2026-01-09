@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Espace Joueur</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Espace Joueur</h1>
+
+    <h2>Choisir votre équipe</h2>
+    <select id="categorie" onchange="mettreAJourSeances()">
+        <option value="">-- Sélectionnez votre catégorie --</option>
+        <option value="U15">U15</option>
+        <option value="U17">U17</option>
+        <option value="Séniors A">Séniors A</option>
+        <option value="Séniors B">Séniors B</option>
+        <option value="Séniors C">Séniors C</option>
+    </select>
+
+    <h2>Choisir la séance</h2>
+    <select id="seance">
+        <option value="">-- Sélectionnez la séance --</option>
+    </select>
+
+    <h2>Avant la séance</h2>
+    <input type="text" id="prenom" placeholder="Prénom">
+    <input type="text" id="nom" placeholder="Nom">
+    <input type="number" id="presence" placeholder="Présence (1=oui,0=non)">
+    <input type="number" id="stress" placeholder="Stress (0-10)">
+    <input type="number" id="fatigue" placeholder="Fatigue (0-10)">
+    <button onclick="envoyerReponse()">Envoyer réponse avant séance</button>
+    <p id="message"></p>
+
+    <h2>Après la séance (RPE)</h2>
+    <input type="number" id="rpe" placeholder="RPE (1-10)">
+    <button onclick="envoyerRPE()">Envoyer RPE</button>
+    <p id="messageRPE"></p>
+
+    <button onclick="window.location.href='index.html'">Retour accueil</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
